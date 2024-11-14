@@ -1,0 +1,336 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+}
+:root{
+  --first: #09093b;
+  --second: #f5f5f5;
+  --hover: #00C89C;
+}
+#container {
+
+  background-color: var(--first);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#home {
+   
+  color: var(--second);
+  width: 80vw;
+  
+  max-width: 900px;
+ 
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#home h1 {
+  text-align: center;
+  font-size: 7vw;
+ 
+}
+#image {
+  display: grid;
+  place-items: center;
+  
+}
+#image img {
+  width: 60%;
+ 
+}
+#start{
+  position: relative;
+display: grid;
+place-items: center;
+padding: 5% 0%;
+font-weight: bolder;
+font-size: 5vw;
+color:  var(--first);
+width: 50%;
+border-radius: 10px 20px;
+margin-top: 20px;
+background-color: var(--second);
+}
+#load{
+  position:fixed;
+  border: solid;
+  border-top: solid transparent;
+  border-bottom: solid transparent;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  animation: rot .7s linear infinite;
+}
+@keyframes rot {
+  to{rotate: 360deg;}
+}
+#drawings{
+  height: 100vh;
+  width: 100vw;
+display: none;
+}
+header{
+ background-color: var(--second);
+  width: 100vw;
+  position: fixed;
+  z-index: 3;
+  height: 10vw;
+  max-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw;
+}
+header input {
+  padding: 10px 30px;
+  font-weight: bolder;
+  font-size: 20px;
+  border: solid var(--first);
+  border-radius: 10px;
+  color: var(--first);
+}
+#logo{
+  background-color: var(--first);
+  font-weight: bolder;
+  color: var(--second);
+  width: auto;
+  height: 50px;
+  border-radius: 5px;
+  padding: 0 5px;
+  display: grid;
+  place-items: center;
+  cursor: default;
+}
+section{
+  height: 100vh;
+ width: 100vw;
+ overflow: auto;
+  
+  position: absolute;
+  padding-top: 10vw;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-items: center;
+  grid-auto-rows: 40vw;
+}
+.card{
+  color: var(--first);
+  height: 30vw;
+  width: 30vw;
+  max-width: 300px;
+  max-height: 300px;
+  background-color: var(--second);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.picture{
+width: 80%;
+height: 80%;
+border: solid var(--first);
+border-radius: 5px;
+display: grid;
+place-items: center;
+}
+svg{
+  width: 100%;
+  height: 100%;
+  stroke:rgb(5, 5, 5); 
+  stroke-width:.2;
+}
+svg>g{
+  fill: white;
+}
+#show{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+#board{
+  background-color: var(--first);
+  grid-column: 1/4;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+#back{
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  color: var(--second);
+  font-weight: bolder;
+  font-size: 30px;
+}
+#back:hover{
+  animation: vibration .2s linear 1;
+  color: var(--hover);
+}
+@keyframes vibration {
+  
+  to{font-size: 35px;}
+}
+#uncoloring{
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  color: var(--second);
+  font-weight: bolder;
+  font-size: 30px;
+}
+#uncoloring:hover{
+  animation: rot .5s linear 1;
+  color: var(--hover);
+}
+@keyframes rot {
+  
+  to{rotate: -360deg;}
+}
+#svgCard{
+  display: grid;
+  place-items: center;
+  width: 90vh;
+  height: 90vh;
+ max-width: 60vw;
+ max-height: 95%;
+  background-color: white;
+  
+}
+#palette{
+  background-color: var(--first);
+  border: solid var(--second);
+  border-radius: 10px;
+}
+#colors{
+  padding: 20px 0;
+  width: 100%;
+  height: 80%;
+  
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  justify-content: center;
+ align-content: flex-start;
+ justify-items: center;
+ gap: 20px 0;
+ overflow: auto;
+}
+.color{
+  border-radius: 50%;
+  width: 4vw;
+  height: 4vw;
+  border: 2px solid gray;
+}
+.color:hover{
+  border: 3px solid var(--second);
+}
+.select{
+  border: 3px solid var(--second);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+  border-radius: 30%;
+}
+.plus{
+  background-color: gray;
+  color: var(--second);
+  display: grid;
+  place-items: center;
+  font-weight: bolder;
+ font-size: 3vw;
+}
+#buttons{
+  border-top: solid var(--second);
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+#download{
+  color: var(--second);
+  border: solid var(--second);
+  padding: 5px 10px;
+  border-radius: 5px 10px;
+  font-weight: bolder;
+  
+}
+
+
+#download:hover{
+  color: var(--hover);
+  border: solid var(--hover);
+}
+@media screen   and (max-width:700px){
+  #logo{
+    font-size: 3vw;
+    width: auto;
+    height: 7vw;
+  }
+  header input {
+    padding: 3px 10px;
+    font-size: 3vw;
+  }
+  section{
+    padding-top: 15vw;
+    grid-auto-rows: 50vw;
+    grid-template-columns: repeat(2,1fr);
+  }
+  .card{
+    height: 40vw;
+    width: 40vw;
+  }
+  #show{
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  #board{
+    grid-row: 1/3; 
+  }
+  
+  #svgCard{
+    width: 90vw;
+    height: 90vw;
+   max-width: 90vw;
+  max-height: 60vh;
+   
+  }
+  #colors{
+    height: 70%;
+    grid-template-columns: repeat(5,1fr);
+    max-height: 30vh;
+ overflow: auto;
+   gap: 20px 0;
+  }
+  .color{
+  width: 10vw;
+    height: 10vw;
+  }
+  #buttons{
+    border-top: solid var(--second);
+    height: 30%;
+    width: 100%;
+    font-size: 20px;
+    
+  }
+  #download{
+    padding: 3px 20px;
+    border-radius: 5px 10px;
+  }
+  .plus{
+    font-size: 7vw;
+  }
+}
